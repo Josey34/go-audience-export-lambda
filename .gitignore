@@ -1,0 +1,43 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# Build output
+bin/
+dist/
+bootstrap
+
+# SAM / AWS
+.aws-sam/
+samconfig.toml
+
+# Environment
+.env
+.env.*
+*.env
+
+# LocalStack
+.localstack/
+volume/
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage.out
+coverage.html
