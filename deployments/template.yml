@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  ExportFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: bootstrap
+      Runtime: provided.al2023
+      CodeUri: ../
+      Environment:
+        Variables:
+          DB_DSN: postgres://exportuser:exportpass@host.docker.internal:5432/exportdb
+          AWS_REGION: us-east-1
+          AWS_ENDPOINT_URL: http://localhost:4566
+          S3_BUCKET: audience-exports
+          LAMBDA_FUNCTION_NAME: ExportFunction
+          LOG_LEVEL: debug
