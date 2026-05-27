@@ -10,9 +10,9 @@ Resources:
       CodeUri: ../
       Environment:
         Variables:
-          DB_DSN: postgres://exportuser:exportpass@host.docker.internal:5432/exportdb
+          DB_DSN: postgres://exportuser:exportpass@host.docker.internal:5400/exportdb
           AWS_REGION: us-east-1
-          AWS_ENDPOINT_URL: http://localhost:4566
+          AWS_ENDPOINT_URL: http://host.docker.internal:4566
           S3_BUCKET: audience-exports
           LAMBDA_FUNCTION_NAME: ExportFunction
           LOG_LEVEL: debug
