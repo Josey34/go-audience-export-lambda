@@ -73,7 +73,7 @@ func (u *RunExport) Execute(ctx context.Context, event dto.AsyncEvent) (err erro
 
 	key := fmt.Sprintf("exports/project-%s/audience.csv", event.ProjectID)
 
-	if err = u.s3Client.Upload(ctx, u.bucket, key, &buf); err != nil {
+	if err = u.s3Client.Upload(ctx, u.bucket, key, bytes.NewReader(buf.Bytes())); err != nil {
 		return err
 	}
 

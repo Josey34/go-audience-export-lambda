@@ -14,7 +14,9 @@ type S3Client struct {
 
 func NewS3Client(cfg aws.Config) *S3Client {
 	return &S3Client{
-		client: s3.NewFromConfig(cfg),
+		client: s3.NewFromConfig(cfg, func(o *s3.Options) {
+			o.UsePathStyle = true
+		}),
 	}
 }
 
